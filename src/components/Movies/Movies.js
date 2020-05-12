@@ -1,13 +1,15 @@
 import React from 'react';
 import SingleMovie from "../SingleMovie/SingleMovie";
 
-const Movies = ({moviesList}) => {
+const Movies = ({moviesList, moviesCount}) => {
     return (
         <>
-            <h1>Found {moviesList.totalResults} movies</h1>
+            <h1 className="movies-count">Found {moviesCount} movies</h1>
+            <div className="movies">
             {
-                moviesList.Search.map((film, index) => <SingleMovie key={index} movie={film}/>)
+                moviesList.map((film, index) => <SingleMovie key={index} movie={film}/>)
             }
+            </div>
         </>
     );
 };

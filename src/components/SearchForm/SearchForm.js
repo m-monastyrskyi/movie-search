@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 const SearchForm = ({handleSearch}) => {
-const [searchString, setSearchString] = useState('');
+const [searchString, setSearchString] = useState('friends');
 const [movies, setMovies] = useState(null);
 
     const handleSubmit = (e, title) => {
