@@ -17,7 +17,9 @@
 }
 .form-input {
   margin: 30px;
-  min-width: 300px;
+ // min-width: 300px;
+  width: 90%;
+  max-width: 300px;
   border: none;
   border-bottom: 1px solid #8a8a8a;
   outline: none;
@@ -25,6 +27,9 @@
   color: white;
   text-align: center;
   font-size: 1.5rem;
-
+}
+@media (max-width: 740px) {
+  .form-input {
+  }
 
 }

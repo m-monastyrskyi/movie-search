@@ -3,7 +3,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import Movies from "../Movies/Movies";
 import {getMovieByTitle} from "../../API/api";
 
-
 const Main = () => {
     const [movies, setMovies] = useState(null);
     const [searchLine, setSearchLine] = useState('');

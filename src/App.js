@@ -9,10 +9,15 @@ import Main from "./components/Main/Main";
 
 function App() {
 
+
+
+
     return (
         <Router>
             <Switch>
-                <Route exact path="/" component={Main}/>
+                <Route exact path="/" >
+                    <Main/>
+                </Route>
                 <Route path="/movie/:id" component={MovieFullInfo}/>
                 <Route path="*" component={NotFound}/>
             </Switch>
