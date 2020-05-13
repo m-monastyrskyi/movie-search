@@ -1,5 +1,5 @@
 export const getMovieFromIMDBbyId = async (id) => {
-    let response = await fetch(`http://www.omdbapi.com/?apikey=aeb57972&i=${id}&plot=full`);
+    let response = await fetch(`https://www.omdbapi.com/?apikey=aeb57972&i=${id}&plot=full`);
     let result = await response.json();
 
     console.log(result);
