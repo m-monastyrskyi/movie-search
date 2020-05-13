@@ -1,8 +1,9 @@
-export const getMovieFromIMDBbyId = (id) => {
-    fetch(`http://www.omdbapi.com/?apikey=aeb57972&i=${id}`)
-        .then(data => data.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err.message));
+export const getMovieFromIMDBbyId = async (id) => {
+    let response = await fetch(`http://www.omdbapi.com/?apikey=aeb57972&i=${id}&plot=full`);
+    let result = await response.json();
+
+    console.log(result);
+    return result;
 }
 
 export const getMovieByTitle = async (title, page = 1) => {

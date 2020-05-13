@@ -1,0 +1,67 @@
+.movie-card {
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, .5);
+  transition: all .3s cubic-bezier(.8, .5, .2, 1.4);
+  overflow: hidden;
+  position: relative;
+  max-height: 440px;
+  max-width: 300px;
+  margin: 5%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: all .3s cubic-bezier(.8, .5, .2, 1.4);
+  }
+
+  h2 {
+    color: $text-color;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  p {
+    color: $text-color;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  &:hover {
+    transition: all .3s cubic-bezier(.8, .5, .2, 1.4);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+    transform: scale(.97);
+
+    img {
+      transition: transform .3s cubic-bezier(.8, .5, .2, 1.4);
+      transform: scale(1.6) rotate(20deg);
+    }
+  }
+
+
+  &__descriptions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .9);
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+
+  }
+}
+
+.movie-card:hover .movie-card__descriptions {
+  left: 0;
+  transition: all .3s ease-in-out;
+  clip-path: circle(75%);
+}

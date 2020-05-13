@@ -1,0 +1,49 @@
+body {
+  background-color: $bg-color;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+
+}
+.load-more {
+  margin: 50px 0;
+}
+
+
+.btn {
+  background: #599bb3 linear-gradient(to bottom, $bg-color 5%, darken($bg-color, 10%) 100%);
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px 32px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #3d768a;
+  outline: none;
+
+  &:hover {
+    background: #408c99 linear-gradient(to bottom, darken($bg-color, 10%) 5%, lighten($bg-color, 10%) 100%);
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+.white {
+  background: #ffffff;
+  color: #000000;
+  &:hover {
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+  }
+}

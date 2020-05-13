@@ -1,0 +1,10 @@
+.movies {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.movies-count {
+  font-size: 20px;
+  margin: 20px 0;
+  color: white;
+}

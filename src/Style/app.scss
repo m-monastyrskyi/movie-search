@@ -1,43 +1,10 @@
+$bg-color: #000000;
+$title-color: #14213D;
+$h2-color: #14213D;
+$text-color: #14213D;
+
 @import "generic/reset";
-
-.movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2%;
-}
-
-.movies-count {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
-.movie-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid rgba(0, 0, 0, .2);
-  border-radius: 10px;
-  box-shadow: 10px 10px 10px -8px rgba(0, 0, 0, 0.64);
-  padding: 20px;
-
-  &__poster {
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  &__title {
-    font-size: 20px;
-    font-weight: 800;
-    padding: 10px;
-
-  }
-
-  &__year {
-    font-size: 16px;
-    font-weight: 300;
-    padding: 10px;
-  }
-}
+@import "layout/general";
+@import "layout/movies";
+@import "layout/movieCard";
+@import "layout/searchForm";

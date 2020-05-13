@@ -1,0 +1,30 @@
+.form-center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-top {
+
+}
+
+.form-label {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.form-input {
+  margin: 30px;
+  min-width: 300px;
+  border: none;
+  border-bottom: 1px solid #8a8a8a;
+  outline: none;
+  background: none;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+
+
+}

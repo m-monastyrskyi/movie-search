@@ -1,64 +1,22 @@
-import React, {useState} from 'react';
-import SearchForm from "./components/SearchForm/SearchForm";
-import Movies from "./components/Movies/Movies";
-import {getMovieByTitle} from "./API/api";
-import  './Style/app.scss';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+import './Style/app.scss';
+import MovieFullInfo from "./components/MovieIFullInfoPage/MovieFullInfo";
+import NotFound from "./components/NotFound/NotFound";
+import Main from "./components/Main/Main";
 
 
 function App() {
-    const [movies, setMovies] = useState(null);
-    const [searchLine, setSearchLine] = useState('');
-    const [totalResults, setTotalResults] = useState(0);
-    const [loading, setLoading] = useState(false);
-    const [btnLoading, setBtnLoading] = useState(false);
-    const [errors, setErrors] = useState('');
 
-    const searchMovies = (title) => {
-        console.log(`Search line: ${title}`);
-        setSearchLine(title);
-        setLoading(true);
-        setErrors('');
-        getMovieByTitle(title)
-            .then(data => {
-                    if (data.Response === "False") {
-                        setErrors(data.Error)
-                    } else {
-                        setMovies(data.Search);
-                        setTotalResults(data.totalResults);
-                    }
-                    setLoading(false);
-                }
-            );
-    }
-    const loadMoreMovies = () => {
-        const currentPage = Math.floor(movies.length / 10 + 1);
-        setBtnLoading(true);
-        getMovieByTitle(searchLine, currentPage)
-            .then(data => {
-                data.Response === "False" ? setErrors(data.Error) : setMovies(prev => [...prev, ...data.Search]);
-                setBtnLoading(false);
-            });
-    }
     return (
-        <div style={{textAlign: "center"}}>
-            <SearchForm handleSearch={searchMovies}/>
-            {
-                errors && <h1>{errors}</h1>
-            }
-            {
-                !errors && !loading && movies && <>
-                    <Movies moviesList={movies} moviesCount={totalResults}/>
-                    {
-                        movies.length < totalResults &&
-                        <button onClick={loadMoreMovies}>{btnLoading ? 'Loading...' : 'Load more...'}</button>
-                    }
-                </>
-            }
-            {
-                loading && <h1>Loading...</h1>
-            }
-
-        </div>
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Main}/>
+                <Route path="/movie/:id" component={MovieFullInfo}/>
+                <Route path="*" component={NotFound}/>
+            </Switch>
+        </Router>
     );
 }
 

@@ -1,16 +1,24 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import imgNotFound from '../../assets/nofound.jpg';
+
 
 const SingleMovie = ({movie}) => {
     return (
         <div className="movie-card">
-            <div className="movie-card__info">
-                <h2 className="movie-card__title">{movie.Title}</h2>
-                <span className="movie-card__year">{movie.Year}</span>
-            </div>
-            <div className="movie-card__poster">
-                <img src={movie.Poster !== "N/A" ? movie.Poster : "http://placehold.jp/300x440.png"} alt={movie.Title}/>
-            </div>
 
+            <img src={movie.Poster !== "N/A" ? movie.Poster : imgNotFound} alt={movie.Title}/>
+
+            <div className="movie-card__descriptions">
+                <h2>{movie.Title}</h2>
+                <p>
+                    {movie.Year}
+                </p>
+                <p>
+                    {movie.Type}
+                </p>
+                <Link to={`/movie/${movie.imdbID}`} className="btn">More info</Link>
+            </div>
         </div>
     );
 };
