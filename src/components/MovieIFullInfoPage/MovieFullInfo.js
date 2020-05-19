@@ -32,7 +32,7 @@ const MovieFullInfo = (props) => {
                         <img src={movieInfo.Poster !== "N/A" ? movieInfo.Poster : imgNotFound} alt={movieInfo.Title}/>
                     </div>
                     {
-                        movieInfo.Ratings && (
+                        movieInfo.Ratings.length > 0 && (
                             <div className="full-aside__ratings">
                                 <h3 className="full-subtitle">
                                     Ratings:
