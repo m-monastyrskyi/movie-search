@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import Movies from "../Movies/Movies";
 import {getMovieByTitle} from "../../API/api";
+import {MoviesContext} from "../MoviesContext/MoviesContext";
+
 
 const Main = () => {
-    const [movies, setMovies] = useState(null);
+
+    const [movies, setMovies, totalResults, setTotalResults] = useContext(MoviesContext);
+
     const [searchLine, setSearchLine] = useState('');
-    const [totalResults, setTotalResults] = useState(0);
     const [loading, setLoading] = useState(false);
     const [btnLoading, setBtnLoading] = useState(false);
     const [errors, setErrors] = useState('');
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[]);
     const searchMovies = (title) => {
         console.log(`Search line: ${title}`);
         setSearchLine(title);

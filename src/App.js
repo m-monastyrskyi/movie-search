@@ -5,20 +5,19 @@ import './Style/app.scss';
 import MovieFullInfo from "./components/MovieIFullInfoPage/MovieFullInfo";
 import NotFound from "./components/NotFound/NotFound";
 import Main from "./components/Main/Main";
+import {MoviesProvider} from "./components/MoviesContext/MoviesContext";
 
 
 function App() {
 
 
-
-
     return (
         <Router>
             <Switch>
-                <Route exact path="/" >
-                    <Main/>
-                </Route>
-                <Route path="/movie/:id" component={MovieFullInfo}/>
+                <MoviesProvider>
+                    <Route exact path="/" component={Main}/>
+                    <Route path="/movie/:id" component={MovieFullInfo}/>
+                </MoviesProvider>
                 <Route path="*" component={NotFound}/>
             </Switch>
         </Router>
