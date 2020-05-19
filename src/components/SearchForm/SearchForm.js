@@ -15,13 +15,15 @@ const SearchForm = ({handleSearch}) => {
     }
 
     return (
-        <form className={ movies ? "form-top" : classes} onSubmit={e => handleSubmit(e, searchString)}>
-            <label className={"form-label"}>Movie title?</label>
-            <input type="text"
+        <form className={movies ? "form-top" : classes} onSubmit={e => handleSubmit(e, searchString)}>
+            <label className={"form-label"} htmlFor={"search"}>Movie title?</label>
+            <input id={"search"}
+                   type="text"
                    placeholder="e.g. Star wars"
                    value={searchString}
                    className={"form-input"}
-                   onChange={e => setSearchString(e.target.value)}/>
+                   onChange={e => setSearchString(e.target.value)}
+            />
         </form>
     );
 };

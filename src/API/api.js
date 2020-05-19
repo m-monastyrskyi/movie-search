@@ -2,17 +2,12 @@ export const getMovieFromIMDBbyId = async (id) => {
     let response = await fetch(`https://www.omdbapi.com/?apikey=aeb57972&i=${id}&plot=full`);
     let result = await response.json();
 
-    console.log(result);
+    //console.log(result);
     return result;
 }
 
 export const getMovieByTitle = async (title, page = 1) => {
-    //"Title":"Avengers: Endgame"
-    // "Year":"2019"
-    // "imdbID":"tt4154796"
-    // "Type":"movie"
-    // "Poster": img url
-
+//console.log(`URL: https://movie-database-imdb-alternative.p.rapidapi.com/?page=${page}&r=json&s=${title}`);
     let response = await fetch(`https://movie-database-imdb-alternative.p.rapidapi.com/?page=${page}&r=json&s=${title}`, {
         "method": "GET",
         "headers": {
@@ -22,6 +17,6 @@ export const getMovieByTitle = async (title, page = 1) => {
     });
     let result = await response.json();
 
-    console.log(result);
+    //  console.log(result);
     return result;
 }

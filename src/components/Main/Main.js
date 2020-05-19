@@ -7,18 +7,17 @@ import {MoviesContext} from "../MoviesContext/MoviesContext";
 
 const Main = () => {
 
-    const [movies, setMovies, totalResults, setTotalResults] = useContext(MoviesContext);
+    const [movies, setMovies, totalResults, setTotalResults, searchLine, setSearchLine] = useContext(MoviesContext);
 
-    const [searchLine, setSearchLine] = useState('');
     const [loading, setLoading] = useState(false);
     const [btnLoading, setBtnLoading] = useState(false);
     const [errors, setErrors] = useState('');
 
-    useEffect(()=>{
+    useEffect(() => {
         window.scrollTo(0, 0);
-    },[]);
+    }, []);
     const searchMovies = (title) => {
-        console.log(`Search line: ${title}`);
+        // console.log(`Search line: ${title}`);
         setSearchLine(title);
         setLoading(true);
         setErrors('');
