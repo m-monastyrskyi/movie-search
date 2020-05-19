@@ -5,6 +5,7 @@
   transition: all .3s cubic-bezier(.8, .5, .2, 1.4);
   overflow: hidden;
   position: relative;
+  min-height: 300px;
   max-height: 440px;
   max-width: 300px;
   margin: 5%;
